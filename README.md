@@ -12,8 +12,8 @@ from xxtea import encryptToBase64, decryptFromBase64
 enString = 'Hello World!!!'
 Key = 'password'
 a = encryptToBase64(enString, Key)
-print(a)
+print(a)  # OI1WQdt0sA2ZtgDPe6qMV1F+YYI=
 b = decryptFromBase64(a, Key)
-print(b)
-print(enString == b)
+print(b)  # Hello World!!!
+print(enString == b)  # True
 ```
