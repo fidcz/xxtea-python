@@ -13,7 +13,7 @@ enString = 'Hello World!!!'
 Key = 'password'
 a = encryptToBase64(enString, Key)
 print(a)
-b = decryptFromBase64(a, 'password')
+b = decryptFromBase64(a, Key)
 print(b)
 print(enString == b)
 ```
