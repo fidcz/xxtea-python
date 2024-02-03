@@ -59,9 +59,7 @@ def b3(i,j):
   while o>0:p=i[o - 1];s=i[o]=b5(i[o]-b6(u,s,p,o,v,j));o-=1
   p=i[l];s=i[0]=b5(i[0]-b6(u,s,p,0,v,j));u=b5(u-0x9E3779B9)
  return i
-def b1(i):
- if c0(i)<4:i.extend([0]*(4-c0(i)))
- return i
+def b1(i):i.extend([0]*(4-c0(i)));return i
 def a4(i,j):
  k=c0(i);l=k>>2
  if k&3!=0:l+=1
@@ -84,7 +82,7 @@ def a3(i):
   l+=1;m+=1
  return''.join(j)
 def a5(i,j):
- k=[0]*j;l=m=0;s=c0(i)
+ k,s=[0]*j,c0(i);l=m=0
  while l<j and m<s:
   t=c3(i[m]);m+=1;u=t>>4
   if u in(0,1,2,3,4,5,6,7):k[l]=t
@@ -105,7 +103,7 @@ def a5(i,j):
  if l<j:k=k[:l]
  return b2(*k)
 def a6(i, j):
- k=[];l=[0]*0x8000;m=n=0;s=c0(i)
+ k,l,s=[],[0]*0x8000,c0(i);m=n=0
  while m<j and n<s:
   t=c3(i[n]);n+=1;u=t>>4
   if u in[0,1,2,3,4,5,6,7]:
@@ -142,3 +140,6 @@ def a8(i, j):
  j=a3(j);return a7(b7(b3(a4(i,C),b1(a4(j,C))),B))
 b=lambda i,j:i if not i or c0(i)==0 else a8(b8(i),j)#decode
 a=lambda i,j:b9(a9(i,j))#encode
+
+print(a('赛罕阿赛Sdasds','password'))
+print(b('hXYAVJ01NEScVYLvI+mPYQSrxuKJUXAC','password'))
