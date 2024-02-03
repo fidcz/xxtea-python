@@ -140,6 +140,3 @@ def a8(i, j):
  j=a3(j);return a7(b7(b3(a4(i,C),b1(a4(j,C))),B))
 b=lambda i,j:i if not i or c0(i)==0 else a8(b8(i),j)#decode
 a=lambda i,j:b9(a9(i,j))#encode
-
-print(a('赛罕阿赛Sdasds','password'))
-print(b('hXYAVJ01NEScVYLvI+mPYQSrxuKJUXAC','password'))
