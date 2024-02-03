@@ -1,4 +1,4 @@
-from re import findall as a2;import ctypes as a1;A='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';B=True;C=False;D='Unfinished UTF-8 octet sequence';E='Character outside valid Unicode';F='Bad UTF-8 encoding';G=-1;H=63;I=128;J=65536;K=12;c0=len;c1=range;c2=Exception;c3=ord
+from re import findall as a2;import ctypes as a1;A='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';B=True;C=False;D='Unfinished UTF-8 octet sequence';E='Character outside valid Unicode';F='Bad UTF-8 encoding';G=-1;H=63;I=128;J=65536;K=12;M=0x9E3779B9;c0=len;c1=range;c2=Exception;c3=ord
 def a0(i,j=0x7fffffff):return(i+(j+1))%(2*(j+1))-j-1 if not-j-1<=i<=j else i
 def b0(i,j):
  if i<0:i=a1.c_uint32(i).value
@@ -48,16 +48,16 @@ b5=lambda i:a0(i&0xFFFFFFFF)
 def b4(i,j):
  k=c0(i);l=k-1;s=i[l];t=0;u=(int(6+52/k)|0)
  while u>0:
-  t=b5(t+0x9E3779B9);v=b0(t,2)&3;w=0
+  t=b5(t+M);v=b0(t,2)&3;w=0
   while w<l:o=i[w+1];s=i[w]=b5(i[w]+b6(t,o,s,w,v,j));w+=1
   o=i[0];s=i[l]=b5(i[l]+b6(t,o,s,l,v,j));u-=1
  return i
 def b3(i,j):
- k=c0(i);l=k-1;s=i[0];t=int(6+52/k);u=b5(t*0x9E3779B9)
+ k=c0(i);l=k-1;s=i[0];t=int(6+52/k);u=b5(t*M)
  while u!=0:
   v=b0(u,2)&3;o=l
   while o>0:p=i[o - 1];s=i[o]=b5(i[o]-b6(u,s,p,o,v,j));o-=1
-  p=i[l];s=i[0]=b5(i[0]-b6(u,s,p,0,v,j));u=b5(u-0x9E3779B9)
+  p=i[l];s=i[0]=b5(i[0]-b6(u,s,p,0,v,j));u=b5(u-M)
  return i
 def b1(i):i.extend([0]*(4-c0(i)));return i
 def a4(i,j):
