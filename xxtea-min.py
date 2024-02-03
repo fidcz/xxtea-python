@@ -85,7 +85,7 @@ def a5(i,j):
  k,s=[0]*j,c0(i);l=m=0
  while l<j and m<s:
   t=c3(i[m]);m+=1;u=t>>4
-  if u in(0,1,2,3,4,5,6,7):k[l]=t
+  if u in range(0,8):k[l]=t
   elif u in(K,13):
    if m<s:k[l]=a0((t&31)<<6)|(c3(i[m])&H);m+=1
    else:c1(D)
@@ -106,7 +106,7 @@ def a6(i, j):
  k,l,s=[],[0]*0x8000,c0(i);m=n=0
  while m<j and n<s:
   t=c3(i[n]);n+=1;u=t>>4
-  if u in[0,1,2,3,4,5,6,7]:
+  if u in range(0,8):
    l[m] = t
   elif u in[K,13]:
    if n < s:l[m]=a0((t&31)<<6)|(c3(i[n])&H);n+=1
