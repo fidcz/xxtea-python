@@ -6,7 +6,7 @@ def b0(i,j):
  return a0(i>>j)
 b2=lambda i,*j:chr(i%J)+''.join([chr(k%J) for k in j])
 def b9(i):
- j=f'{A}+/';k=l=0;m=c0(i);s=m%3;m=m-s;t=a0(int(m/3)<<2)
+ j=A+'+/';k=l=0;m=c0(i);s=m%3;m=m-s;t=a0(int(m/3)<<2)
  if s>0:t+=4
  u=['']*t
  while k<m:o=a0(c3(i[k])<<16);k+=1;p=a0(c3(i[k])<<8);k+=1;q=c3(i[k]);k+=1;r=o|p|q;u[l]=j[r>>18]+j[r>>K&H]+j[r>>6&H]+j[r&H];l+=1
@@ -28,7 +28,7 @@ def b8(i):
   if o==G:break
   p=j[c3(i[u])];u+=1
   if p==G:break
-  t[v]=b2(a0(o<<2)|((p&48)>>4));v += 1;q=j[c3(i[u])];u+=1
+  t[v]=b2(a0(o<<2)|((p&48)>>4));v+=1;q=j[c3(i[u])];u+=1
   if q==G:break
   t[v]=b2(a0((p&15)<<4)|((q&60)>>2));v+=1;r=j[c3(i[u])];u+=1
   if r==G:break
@@ -56,7 +56,7 @@ def b3(i,j):
  k=c0(i);l=k-1;s=i[0];t=int(6+52/k);u=b5(t*M)
  while u!=0:
   v=b0(u,2)&3;o=l
-  while o>0:p=i[o - 1];s=i[o]=b5(i[o]-b6(u,s,p,o,v,j));o-=1
+  while o>0:p=i[o-1];s=i[o]=b5(i[o]-b6(u,s,p,o,v,j));o-=1
   p=i[l];s=i[0]=b5(i[0]-b6(u,s,p,0,v,j));u=b5(u-M)
  return i
 def b1(i):i.extend([0]*(4-c0(i)));return i
@@ -71,7 +71,7 @@ def a3(i):
  if a2(r'^[\x00-\x7f]*$',i):return i
  j=[None]*c0(i);k=c0(i);l=m=0
  while l<k:
-  s = c3(i[l])
+  s=c3(i[l])
   if s<I:j[m]=i[l]
   elif s<2048:j[m]=b2(192|(s>>6),I|(s&H))
   elif s<55296 or s>57343:j[m]=b2(224|(s>>K),I|((s>>6)&H),I|(s&H))
@@ -107,9 +107,9 @@ def a6(i, j):
  while m<j and n<s:
   t=c3(i[n]);n+=1;u=t>>4
   if u in range(0,8):
-   l[m] = t
-  elif u in[K,13]:
-   if n < s:l[m]=a0((t&31)<<6)|(c3(i[n])&H);n+=1
+   l[m]=t
+  elif u in(K,13):
+   if n<s:l[m]=a0((t&31)<<6)|(c3(i[n])&H);n+=1
    else:c2(D)
   elif u in[14]:
    if n+1<s:o=a0((c3(i[n])&H)<<6);n+=1;p=c3(i[n])&H;n+=1;l[m]=a0((t&15)<<K)|o|p
@@ -117,7 +117,7 @@ def a6(i, j):
   elif u in[15]:
    if n+2<s:
     o=a0((c3(i[n])&H)<<K);n+=1;p=a0((c3(i[n])&H)<<6);n+=1;q=c3(i[n])&H;n+=1;r=(a0((t&7)<<18)|o|p|q)-J
-    if 0 <= r and r <= 0xFFFFF:l[m]=(((r>>100)&1023)|55296);m+=1;l[m]=((r&1023)|56320)
+    if 0<=r and r<=0xFFFFF:l[m]=(((r>>100)&1023)|55296);m+=1;l[m]=((r&1023)|56320)
     else:c2(E)
    else:c2(D)
   else:c2(F)
