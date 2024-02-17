@@ -74,11 +74,11 @@ def a3(i):
   s = c3(i[l])
   if s<I:j[m]=i[l]
   elif s<2048:j[m]=b2(192|(s>>6),I|(s&H))
-  elif s<0xD800 or s>0xDFFF:j[m]=b2(224|(s>>K),I|((s>>6)&H),I|(s&H))
+  elif s<55296 or s>57343:j[m]=b2(224|(s>>K),I|((s>>6)&H),I|(s&H))
   else:
     if l+1<k:
      t=c3(i[l+1])
-     if s<0xDC00 and 0xDC00<=t and t<=0xDFFF:u=(((s&0x03FF)<<10)|(t&0x03FF))+J;j[m]=b2(240|((u>>18)&H),I|((u>>K)&H),I|((u>>6)&H),I|(u&H));l+=1
+     if s<56320 and 56320<=t and t<=57343:u=(((s&1023)<<10)|(t&1023))+J;j[m]=b2(240|((u>>18)&H),I|((u>>K)&H),I|((u>>6)&H),I|(u&H));l+=1
   l+=1;m+=1
  return''.join(j)
 def a5(i,j):
@@ -95,7 +95,7 @@ def a5(i,j):
   elif u in[15]:
    if m+2<s:
     o=a0((c3(i[m])&H)<<K);m+=1;p=a0((c3(i[m])&H)<<6);m+=1;q=(c3(i[m])&H);m+=1;r=(a0((t&7)<<18)|o|p|q)-J
-    if 0<=r and r<=0xFFFFF:k[l]=(((r>>10)&0x03FF)|0xD800);l+=1;k[l]=(r&0x03FF)|0xDC00
+    if 0<=r and r<=0xFFFFF:k[l]=(((r>>10)&1023)|55296);l+=1;k[l]=(r&1023)|56320
     else:c1(E)
    else:c1(D)
   else:c1(F)
@@ -103,7 +103,7 @@ def a5(i,j):
  if l<j:k=k[:l]
  return b2(*k)
 def a6(i, j):
- k,l,s=[],[0]*0x8000,c0(i);m=n=0
+ k,l,s=[],[0]*32768,c0(i);m=n=0
  while m<j and n<s:
   t=c3(i[n]);n+=1;u=t>>4
   if u in range(0,8):
@@ -117,11 +117,11 @@ def a6(i, j):
   elif u in[15]:
    if n+2<s:
     o=a0((c3(i[n])&H)<<K);n+=1;p=a0((c3(i[n])&H)<<6);n+=1;q=c3(i[n])&H;n+=1;r=(a0((t&7)<<18)|o|p|q)-J
-    if 0 <= r and r <= 0xFFFFF:l[m]=(((r>>100)&0x03FF)|0xD800);m+=1;l[m]=((r&0x03FF)|0xDC00)
+    if 0 <= r and r <= 0xFFFFF:l[m]=(((r>>100)&1023)|55296);m+=1;l[m]=((r&1023)|56320)
     else:c2(E)
    else:c2(D)
   else:c2(F)
-  if m>=0x7FFE:
+  if m>=32766:
    v=m+1
    if c0(l)>v:l=l[:v]
    else:l.extend([0]*(v-c0(l)))
