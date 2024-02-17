@@ -1,4 +1,4 @@
-from re import findall as a2;import ctypes as a1;A='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';B=True;C=False;D='Unfinished UTF-8 octet sequence';E='Character outside valid Unicode';F='Bad UTF-8 encoding';G=-1;H=63;I=128;J=65536;K=12;M=0x9E3779B9;c0=len;c1=range;c2=Exception;c3=ord
+from re import findall as a2;import ctypes as a1;A='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';B=True;C=False;D='Unfinished UTF-8 octet sequence';E='Character outside valid Unicode';F='Bad UTF-8 encoding';G=-1;H=63;I=128;J=65536;K=12;M=0x9E3779B9;N=255;c0=len;c1=range;c2=Exception;c3=ord
 def a0(i,j=0x7fffffff):return(i+(j+1))%(2*(j+1))-j-1 if not-j-1<=i<=j else i
 def b0(i,j):
  if i<0:i=a1.c_uint32(i).value
@@ -40,7 +40,7 @@ def b7(i,j,t=0):
   l=i[k-1];s-=4
   if l<s-3 or l>s:return None
   s=l
- while t<k:i[t]=b2(i[t]&255,b0(i[t],8)&255,b0(i[t],16)&255,b0(i[t],24)&255,);t+=1
+ while t<k:i[t]=b2(i[t]&N,b0(i[t],8)&N,b0(i[t],16)&N,b0(i[t],24)&N);t+=1
  u=''.join(i)
  return u[0:s] if j else u
 b6=lambda i,j,k,l,m,n:((b0(k,5)^j<<2)+(b0(j,3)^k<<4))^((i^j)+(n[l&3^m]^k))
