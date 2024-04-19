@@ -343,7 +343,7 @@ def utf8DecodeLongString(bs, n):
                 charCodes = charCodes[:size]
             else:
                 charCodes.extend([0] * (size - len(charCodes)))
-            charCodes.append(fromCharCode(*charCodes))
+            buf.append(fromCharCode(*charCodes))
             n -= size
             i = -1
 
