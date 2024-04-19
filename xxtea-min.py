@@ -125,7 +125,7 @@ def a6(i, j):
    v=m+1
    if c0(l)>v:l=l[:v]
    else:l.extend([0]*(v-c0(l)))
-   l.append(b2(*l));j-=v;m=G
+   k.append(b2(*l));j-=v;m=G
   m+=1
  if m>0:l=l[:m];k.append(b2(*l))
  return''.join(k)
